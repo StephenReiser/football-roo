@@ -10,6 +10,18 @@
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.aff65a4b.js"
+    "static/js/main.aff65a4b.js",
+    "main.css": "/football-roo/static/css/main.e6c13ad2.css",
+    "main.js": "/football-roo/static/js/main.b49a25f3.js",
+    "static/js/787.a86f3764.chunk.js": "/football-roo/static/js/787.a86f3764.chunk.js",
+    "index.html": "/football-roo/index.html",
+    "main.e6c13ad2.css.map": "/football-roo/static/css/main.e6c13ad2.css.map",
+    "main.b49a25f3.js.map": "/football-roo/static/js/main.b49a25f3.js.map",
+    "787.a86f3764.chunk.js.map": "/football-roo/static/js/787.a86f3764.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.b49a25f3.js"
+
   ]
 }
