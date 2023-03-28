@@ -5,7 +5,7 @@ function NameForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('https://test-backend.sillydoggy.repl.co/count-letters', {
+    fetch('https://FootballWeeklyScores.sillydoggy.repl.co/count-letters', {
       method: 'POST',
       body: JSON.stringify({ name: name }),
       headers: {
