@@ -1,23 +1,39 @@
 import React, { useState, useEffect } from "react";
 
-function TestApp() {
-  const [data, setData] = useState([]);
+function App() {
+  const [summaryData, setSummaryData] = useState([]);
 
   useEffect(() => {
     fetch("https://FootballWeeklyScores.sillydoggy.repl.co/summary")
       .then((response) => response.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        setSummaryData(data);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <div>
-      {data.map((item) => (
+      <h1>Test-App</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={name} onChange={handleChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      {summaryData.map((item) => (
         <div key={item.Name}>
-          <h2>{item.Name}</h2>
+          <h3>{item.Name}</h3>
           <ul>
-            {item.Scores.map((score) => (
-              <li key={`${score.Year}-${score.Week}`}>
-                {score.Year}-{score.Week}: {score.DKPts} DKPts
+            {item.summary.map((data) => (
+              <li key={data.YearWeek}>
+                Year-Week: {data.YearWeek},
+                Week: {data.Week},
+                Year: {data.Year},
+                DkPts: {data.DkPts},
+                Team: {data.Team},
+                Opp: {data.Opp}
               </li>
             ))}
           </ul>
@@ -27,4 +43,4 @@ function TestApp() {
   );
 }
 
-export default TestApp;
+export default App;
