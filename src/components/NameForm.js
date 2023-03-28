@@ -5,8 +5,17 @@ function NameForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
+    fetch('https://test-backend.sillydoggy.repl.co/count-letters', {
+      method: 'POST',
+      body: JSON.stringify({ name: name }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
   }
+  
 
   return (
     <form onSubmit={handleSubmit}>
