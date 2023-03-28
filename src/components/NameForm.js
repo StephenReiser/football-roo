@@ -1,28 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-function NameForm() {
-  const [name, setName] = useState('');
+function App() {
+  const [summaryData, setSummaryData] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch('https://FootballWeeklyScores.sillydoggy.repl.co/count-letters', {
-      method: 'POST',
-      body: JSON.stringify({ name: name }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  }
-  
+  useEffect(() => {
+    fetch("https://FootballWeeklyScores.sillydoggy.repl.co/summary")
+      .then((response) => response.json())
+      .then((data) => {
+        setSummaryData(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <h1>Test-App</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={name} onChange={handleChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      {summaryData.map((item) => (
+        <div key={item.Name}>
+          <h3>{item.Name}</h3>
+          <ul>
+            {item.summary.map((data) => (
+              <li key={data.YearWeek}>
+                Year-Week: {data.YearWeek},
+                Week: {data.Week},
+                Year: {data.Year},
+                DkPts: {data.DkPts},
+                Team: {data.Team},
+                Opp: {data.Opp}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 }
 
-export default NameForm;
+export default App;
