@@ -1,16 +1,5 @@
 {
   "files": {
-    "main.css": "/test-react/static/css/main.e6c13ad2.css",
-    "main.js": "/test-react/static/js/main.aff65a4b.js",
-    "static/js/787.a86f3764.chunk.js": "/test-react/static/js/787.a86f3764.chunk.js",
-    "index.html": "/test-react/index.html",
-    "main.e6c13ad2.css.map": "/test-react/static/css/main.e6c13ad2.css.map",
-    "main.aff65a4b.js.map": "/test-react/static/js/main.aff65a4b.js.map",
-    "787.a86f3764.chunk.js.map": "/test-react/static/js/787.a86f3764.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.aff65a4b.js",
     "main.css": "/football-roo/static/css/main.e6c13ad2.css",
     "main.js": "/football-roo/static/js/main.b49a25f3.js",
     "static/js/787.a86f3764.chunk.js": "/football-roo/static/js/787.a86f3764.chunk.js",
@@ -22,6 +11,5 @@
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
     "static/js/main.b49a25f3.js"
-
   ]
 }
