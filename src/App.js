@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Title from './components/Title'
-import NameForm from './components/NameForm'
-import NameDisplay from './components/NameDisplay';
+// import Title from './components/Title'
+// import NameForm from './components/NameForm'
+// import NameDisplay from './components/NameDisplay';
 import Summary from './components/Summary'
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
 
   return (
     <div className="App">
-      <Title />
+      {/* <Title /> */}
       <main>
-      <NameForm onSubmit={handleNameSubmit} />
-      {name && <NameDisplay name={name} />}
+      {/* <NameForm onSubmit={handleNameSubmit} />
+      {name && <NameDisplay name={name} />} */}
       <Summary />
 
       </main>
