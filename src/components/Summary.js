@@ -13,7 +13,9 @@ function Summary() {
         "https://FootballWeeklyScores.sillydoggy.repl.co/summary"
       );
       const json = await response.json();
-      setData(json);
+      const filteredData = json.filter((player) => player.DKPts.length > 5);
+      setData(filteredData);
+      
     }
     fetchData();
   }, []);
