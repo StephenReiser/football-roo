@@ -55,6 +55,7 @@ function Summary() {
             <tr>
               <th onClick={() => sortData("Name")}>Name</th>
               <th>Games</th>
+              <th>Position</th>
               <th onClick={() => sortData("DKPts_10%")}>DKPts_10%</th>
               <th onClick={() => sortData("DKPts_25%")}>DKPts_25%</th>
               <th onClick={() => sortData("DKPts_50%")}>DKPts_50%</th>
@@ -68,6 +69,7 @@ function Summary() {
                 <tr key={player.Name}>
                   <td>{player.Name}</td>
                   <td>{player.DKPts.length}</td>
+                  <td>{player.Pos[0]}</td>
                   <td>{player["DKPts_10%"].toFixed(1)}</td>
                   <td>{player["DKPts_25%"].toFixed(1)}</td>
                   <td>{player["DKPts_50%"].toFixed(1)}</td>
